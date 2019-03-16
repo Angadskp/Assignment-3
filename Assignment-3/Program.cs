@@ -42,7 +42,7 @@ namespace Assignment_3
         {
             try
             {
-                String directory = "U:\\Users\\732116\\New folder\\names.txt";
+                String directory = "U:\Users\732104\Assignment-3\names.txt";
                 string text;
                 var fileStream = new FileStream(@directory, FileMode.Open, FileAccess.Read);
                 using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))

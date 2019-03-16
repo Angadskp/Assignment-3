@@ -4,20 +4,59 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
+//C0732104-C0728432
+
+//Angad Singh - C0732104
+//Labhwinder Singh - C0728432
+
+
+
 namespace Assignment_3
 {
     public delegate void Sort_DataStructure();
 
     class Program
     {
-        static void Main(string[] args) { }
+        static void Main(string[] args)
+        {
+            Student s = new Student();
+            s.Run();
+        }
     }
 
     class Student
     {
+        List<String> StudentList = new List<string>();
         String Student_name;
         String StudentID;
         double StudentGPA;
+
+        public void Run()
+        {
+            PopulateStudentList();
+        }
+
+        public void PopulateStudentList()
+        {
+            try
+            {
+                String directory = "U:\\Users\\732116\\New folder\\names.txt";
+                string text;
+                var fileStream = new FileStream(@directory, FileMode.Open, FileAccess.Read);
+                using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
+                {
+                    text = streamReader.ReadToEnd();
+                    StudentList.Add(text);
+                }
+            }
+
+            catch (Exception e) { }
+
+        }
+
+
 
         // TODO: change this implementation so that the program pulls names from a Text File:
         // to do this, you must change the container for Student Names from Array to List
